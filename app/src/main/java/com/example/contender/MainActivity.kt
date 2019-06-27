@@ -2,6 +2,7 @@ package com.example.contender
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.ContactsContract
 import android.support.v7.widget.SearchView
 import android.util.Log
 import android.view.View
@@ -23,7 +24,7 @@ import org.json.JSONObject
 class MainActivity : AppCompatActivity() {
     var selectedItemAutoComplete: String? = ""
     var itensAutoComplete: MutableList<SmartPhoneItem> = mutableListOf()
-
+    val db = DataBaseHandler(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         var searchAutoComplete: AutoCompleteTextView = findViewById(R.id.auto_complete_search)
 
         loadItensAutoCompleteSearch(searchAutoComplete, itensAutoComplete)
+
         searchAutoComplete.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onNothingSelected(parent: AdapterView<*>?) {
 
@@ -46,32 +48,34 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    override fun onResume() {
+        super.onResume()
+       // itensAutoComplete = db.getAllSmartPhone()
+    }
+
 
     fun loadItensAutoCompleteSearch(searchAutoComplete: AutoCompleteTextView, itens: MutableList<SmartPhoneItem>){
         val queue = newRequestQueue(this)
-        //val url = "https://reqres.in/api/users"
         val url = "http://144.217.42.212/contender/products"
 
         val jsonArrayRequest = JsonObjectRequest(Request.Method.GET, url, null, Listener<JSONObject>{ response ->
                 val dados = response.getJSONArray("produtos")
-                val objeto = dados.getJSONObject(0)
-                val searchAutoComplete: AutoCompleteTextView = findViewById(R.id.auto_complete_search)
+//                val objeto = dados.getJSONObject(0)
+                val lista = mutableListOf<SmartPhoneItem>()
 
-                for(data in 0..dados.length()-1){
+                val searchAutoComplete: AutoCompleteTextView = findViewById(R.id.auto_complete_search)
+                val dadosSize = dados.length()-1
+                for(data in 0..dadosSize){
                     var objeto = dados.getJSONObject(data)
 
                     val id: String = objeto.getString("idCell")
                     val title: String = objeto.getString("title")
-                    itens.add(SmartPhoneItem(id, title))
+                    lista.add(SmartPhoneItem(id,title))
+                    //this.db.addSmartPhone(SmartPhoneItem(id, title))
+                    Log.d("FUNCIONOU", "$data")
                 }
-
                 Log.d("FUNCIONOU", "$dados")
 
-                searchAutoComplete.adapter = (AutoCompleteSearchAdapter(this, itensAutoComplete))
-
-                //var nome = response.getJSONArray("data").getJSONObject(1)
-
-                //Log.d("FUNCIONOU", "${nome.getString("email")}")
 
             }, Response.ErrorListener {error ->
                 Log.d("ACHEI ERROR", "$error")
