@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <ImageView
+            android:id="@+id/image_smartphone"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="8dp"/>
+    <TextView
+            android:id="@+id/text_name_smartphone"
+            android:text="SmartPhone Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/image_smartphone"
+            app:layout_constraintStart_toStartOf="@+id/image_smartphone"
+            app:layout_constraintEnd_toEndOf="@+id/image_smartphone"/>
+    <TextView
+            android:text="Operationg System:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" tools:layout_editor_absoluteY="274dp"
+            android:id="@+id/text_os" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" tools:layout_editor_absoluteY="274dp"
+            android:id="@+id/text_operating_system_description" app:layout_constraintStart_toEndOf="@+id/text_os"
+            android:layout_marginStart="8dp"/>
+    <TextView
+            android:text="Screen:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView5" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/text_os" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_screen_description" app:layout_constraintStart_toEndOf="@+id/textView5"
+            android:layout_marginStart="8dp" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/text_operating_system_description"/>
+    <TextView
+            android:text="Processor:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_processor" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/text_memory_ram" android:layout_marginTop="8dp"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_processor_description" app:layout_constraintStart_toEndOf="@+id/text_processor"
+            android:layout_marginStart="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/text_memory_ram_description" android:layout_marginTop="8dp"/>
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:id="@+id/view"
+            tools:layout_editor_absoluteX="-16dp" app:layout_constraintTop_toBottomOf="@+id/text_screen_description"
+            android:layout_marginTop="8dp"/>
+    <TextView
+            android:text="Screen Details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_screen_details"
+            app:layout_constraintTop_toBottomOf="@+id/view" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" android:layout_marginTop="8dp" android:textSize="18dp"/>
+    <TextView
+            android:text="Screen Resolution:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_screen_resolution" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/text_screen_details" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_screen_resolution_description"
+            app:layout_constraintStart_toEndOf="@+id/text_screen_resolution"
+            android:layout_marginStart="8dp" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/text_screen_details"/>
+    <TextView
+            android:text="Screen Size:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_screen_size" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/text_screen_resolution"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView14" app:layout_constraintStart_toEndOf="@+id/text_screen_size"
+            android:layout_marginStart="8dp" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/text_screen_resolution_description"/>
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:id="@+id/view2"
+            tools:layout_editor_absoluteX="-16dp" app:layout_constraintTop_toBottomOf="@+id/text_screen_size"
+            android:layout_marginTop="8dp"/>
+    <TextView
+            android:text="Thecnicals Details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_thecnicals_details"
+            app:layout_constraintTop_toBottomOf="@+id/view2" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" android:layout_marginTop="8dp" android:textSize="18dp"/>
+    <TextView
+            android:text="Battery Capacity:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_battery_capacity" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/text_thecnicals_details"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_battery_capacity_description" app:layout_constraintStart_toEndOf="@+id/text_battery_capacity"
+            android:layout_marginStart="8dp" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/text_thecnicals_details"/>
+    <TextView
+            android:text="Memory Ram:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_memory_ram" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/text_battery_capacity"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_memory_ram_description" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/text_battery_capacity_description"
+            app:layout_constraintStart_toEndOf="@+id/text_memory_ram" android:layout_marginStart="8dp"/>
+
+
+</android.support.constraint.ConstraintLayout>
